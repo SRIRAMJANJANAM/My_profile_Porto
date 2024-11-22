@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sri Ram Janjanam{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="icon" href="{% static 'images/sriram.png' %}">
+</head>
+<body>
+   <nav>
+    <h2>Sri Ram Janjanam</h2>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/skills">Skills</a>
+    <a href="/contact">Contact</a>
+   </nav> <br> <br> <br> <br> <br>
+   {% block body_block%}
+   <div id="main">
+    <h1 id="about">Hello, It's Me <br> <em>Sri Ram Janjanam</em><br>And I'm a <span id='bold'></span></h1>
+    <h3 id="about1">I'm a Full-Stack Web Developer and I’m passionate about building responsive, user-friendly websites and applications, with a focus on clean code, performance, and scalability,I have experience in front-end, back-end  and Database technologies and many more.....</h3>
+    <div id="img">
+        <a href="https://www.linkedin.com/in/sri-ram-janjanam-0b4a86219/" target="_blank"><img src="{% static 'images/linkedin1.png' %}" id="social" title="Linkedin"></a>
+        <a href="https://github.com/SRIRAMJANJANAM" target="_blank"> <img src="{% static 'images/git.png' %}" alt="" id="social" title="github" ></a>
+        <a href="https://www.youtube.com/@Pythonwebdeveloper_1" target="_blank"> <img src="{% static 'images/yt.png' %}" alt="" id="social" title="Youtube"></a> <br>
+        <h3><a href="/about">More About me</a></h3>
+    </div>
+    <div id="profile">
+        <img src="{% static 'images/sriram.png' %}" alt="" id="image" title="Sri Ram Janjanam">
+    </div>
+    <script>
+        // The text to animate letter by letter
+        const text = "Full-Stack Developer";
+        const container = document.getElementById("bold");
+
+        // Function to animate letters
+        function animateLetters() {
+            // Loop through each letter of the text
+            for (let i = 0; i < text.length; i++) {
+                // Create a span for each letter
+                const span = document.createElement("span");
+                span.classList.add("letter");
+                span.innerText = text[i];
+                container.appendChild(span);
+                setTimeout(() => {
+                    span.style.opacity = 3;
+                }, 100 * i);
+            }
+        }
+        animateLetters();
+    </script>
+    
+   </div>
+   {% endblock %}
+</body>
+</html>
